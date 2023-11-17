@@ -21,24 +21,23 @@ describe('Test 1', function() {
     const pageTitle = await driver.getTitle();
     if (pageTitle === "Space & Beyond | Testim.io demo") {
       await driver.executeScript("alert('El assert es correcto. El título es: " + pageTitle + "');")
-      await driver.sleep(1000);
+      await driver.sleep(2000);
     }else{
       await driver.executeScript("alert('El assert no es correcto. El título es: " + pageTitle + "');")
-      await driver.sleep(1000);
+      await driver.sleep(2000);
     }
     const alert = await driver.switchTo().alert();
     await alert.accept();
     const assert2 = await driver.findElement(By.xpath("//*[@id=\"app\"]/div/section[2]/div[4]/div/div/div[1]/div[2]/div/h5")).getText();
     if (assert2 === "Madan") {
-      await driver.executeScript("alert('El assert es correcto. El título es: " + assert2 + "');")
-      await driver.sleep(1000);
+      await driver.executeScript("alert('El assert es correcto. El texto es: " + assert2 + "');")
+      await driver.sleep(2000);
     }else{
-      await driver.executeScript("alert('El assert no es correcto. El título es: " + assert2 + "');")
-      await driver.sleep(1000);
+      await driver.executeScript("alert('El assert no es correcto. El texto es: " + assert2 + "');")
+      await driver.sleep(2000);
     }
     const alert1 = await driver.switchTo().alert();
     await alert1.accept();
-    await driver.sleep(2000);
     await driver.sleep(2000);   
     await driver.findElement(By.xpath("//*[@id=\"app\"]/div/section[1]/div[3]/div/div[1]/div/div")).click()
     await driver.sleep(2000);
@@ -76,6 +75,7 @@ describe('Test 1', function() {
     await driver.sleep(2000);
     })
 })
+
 
 
 
